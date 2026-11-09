@@ -1,387 +1,197 @@
 
-<div id="sevilla-air-widget">
-  <style>
-    #sevilla-air-widget {
-      --bg: #101c20;
-      --panel: #1a2b2e;
-      --muted: #91aaa3;
-      --white: #f0f6f3;
-      --accent: #66d6ae;
-      font-family: Inter, system-ui, sans-serif;
-      color: var(--white);
-      width: 100%;
-      max-width: 650px;
-      margin: auto;
-      background: var(--bg);
-      border-radius: 22px;
-      padding: 25px;
-      box-sizing: border-box;
-      box-shadow: 0 15px 45px #10201e20;
-    }
-
-    #sevilla-air-widget * { box-sizing: border-box; }
-
-    #sevilla-air-widget .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #34474a;
-      padding-bottom: 18px;
-    }
-
-    #sevilla-air-widget .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    #sevilla-air-widget .logo {
-      background: #173a35;
-      color: var(--accent);
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 22px;
-    }
-
-    #sevilla-air-widget .brand-name {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    #sevilla-air-widget .subtitle {
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      margin-top: 4px;
-    }
-
-    #sevilla-air-widget .live {
-      color: var(--accent);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    #sevilla-air-widget .location {
-      margin-top: 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    #sevilla-air-widget .location h2 {
-      font-size: 22px;
-      margin: 0 0 6px;
-    }
-
-    #sevilla-air-widget .coordinates {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    #sevilla-air-widget .main {
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    #sevilla-air-widget .gauge {
-      --color: #66d6ae;
-      width: 174px;
-      height: 174px;
-      border-radius: 50%;
-      margin: auto;
-      display: grid;
-      place-items: center;
-      background: conic-gradient(
-        var(--color) var(--progress, 0%),
-        #29403e 0
-      );
-      position: relative;
-    }
-
-    #sevilla-air-widget .gauge::before {
-      content: "";
-      position: absolute;
-      inset: 10px;
-      background: var(--bg);
-      border-radius: 50%;
-    }
-
-    #sevilla-air-widget .gauge-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    #sevilla-air-widget .aqi {
-      font-size: 48px;
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -2px;
-    }
-
-    #sevilla-air-widget .aqi-label {
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      margin-top: 7px;
-    }
-
-    #sevilla-air-widget .status {
-      margin-top: 18px;
-      font-size: 21px;
-      font-weight: 750;
-    }
-
-    #sevilla-air-widget .description {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 7px;
-    }
-
-    #sevilla-air-widget .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    #sevilla-air-widget .pollutant {
-      background: var(--panel);
-      border: 1px solid #263c3e;
-      border-radius: 15px;
-      padding: 17px;
-    }
-
-    #sevilla-air-widget .pollutant-name {
-      font-size: 15px;
-      font-weight: 750;
-    }
-
-    #sevilla-air-widget .pollutant-description {
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 5px;
-    }
-
-    #sevilla-air-widget .pollutant-value {
-      font-size: 26px;
-      font-weight: 750;
-      margin-top: 15px;
-    }
-
-    #sevilla-air-widget .unit {
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 400;
-    }
-
-    #sevilla-air-widget .footer {
-      border-top: 1px solid #34474a;
-      margin-top: 20px;
-      padding-top: 15px;
-      color: var(--muted);
-      font-size: 10px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    #sevilla-air-widget .error {
-      color: #ffb7a8;
-      text-align: center;
-      font-size: 12px;
-      margin-top: 15px;
-    }
-
-    @media(max-width:380px) {
-      #sevilla-air-widget { padding: 17px; }
-      #sevilla-air-widget .pollutant { padding: 12px; }
-    }
-  </style>
-
-  <div class="header">
-    <div class="brand">
-      <div class="logo">〰</div>
-      <div>
-        <div class="brand-name">SEVILLA AIR</div>
-        <div class="subtitle">AIR QUALITY MONITOR</div>
-      </div>
-    </div>
-    <div class="live">● EN DIRECTO</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101c20">
+<title>Sevilla Air Quality | Calidad del aire</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;padding:35px 16px;
+ background:#0c171a;color:#f0f6f3;
+ font-family:Inter,system-ui,sans-serif;
+ min-height:100vh;
+ display:flex;justify-content:center;align-items:center
+}
+.dashboard{
+ width:100%;max-width:760px;
+ background:#101f22;border:1px solid #29403e;
+ border-radius:24px;padding:28px;
+ box-shadow:0 20px 60px #0005
+}
+header{display:flex;justify-content:space-between;align-items:center;
+ padding-bottom:22px;border-bottom:1px solid #304342}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{font-size:25px;background:#173a35;padding:12px;border-radius:13px}
+h1{font-size:17px;letter-spacing:1px;margin:0}
+small,.muted{color:#91aaa3}
+.tag{font-size:11px;color:#66d6ae}
+.location{margin:26px 0}
+.location h2{font-size:25px;margin:0 0 7px}
+.main{text-align:center;padding:20px 0 32px}
+.gauge{
+ width:180px;height:180px;border-radius:50%;
+ margin:auto;display:grid;place-items:center;
+ background:conic-gradient(var(--color,#66d6ae) var(--progress,0%),#29403e 0);
+ position:relative
+}
+.gauge:before{content:"";position:absolute;inset:11px;
+ background:#101f22;border-radius:50%}
+.gauge-content{position:relative;text-align:center}
+.aqi{font-size:53px;font-weight:800}
+.aqi-label{font-size:10px;letter-spacing:2px;color:#91aaa3}
+.status{font-size:23px;font-weight:750;margin-top:20px}
+.description{font-size:13px;color:#91aaa3;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:#1a2b2e;padding:20px;border-radius:16px;
+ border:1px solid #29403e}
+.card h3{margin:0;font-size:16px}
+.card p{font-size:12px;color:#91aaa3;margin:5px 0 15px}
+.value{font-size:28px;font-weight:750}
+.unit{font-size:12px;color:#91aaa3;font-weight:400}
+footer{border-top:1px solid #304342;margin-top:25px;padding-top:18px;
+ display:flex;justify-content:space-between;gap:12px;
+ flex-wrap:wrap;font-size:11px;color:#91aaa3}
+.error{color:#ffab9b;font-size:12px;margin-top:15px}
+@media(max-width:450px){
+ .dashboard{padding:19px}
+ .card{padding:14px}
+ .location h2{font-size:21px}
+}
+</style>
+</head>
+<body>
+<main class="dashboard">
+<header>
+ <div class="brand">
+  <div class="logo">〰</div>
+  <div>
+   <h1>SEVILLA AIR</h1>
+   <small>AIR QUALITY MONITOR</small>
   </div>
+ </div>
+ <span class="tag">● DATOS EN DIRECTO</span>
+</header>
 
-  <div class="location">
-    <div>
-      <h2>Sevilla, España</h2>
-      <div class="coordinates">
-        37.3891° N · 5.9845° O
-      </div>
-    </div>
-    <div style="font-size:25px">📍</div>
+<section class="location">
+ <h2>Sevilla, España</h2>
+ <small>37.3891° N · 5.9845° O</small>
+</section>
+
+<section class="main">
+ <div class="gauge" id="gauge">
+  <div class="gauge-content">
+   <div class="aqi" id="aqi">--</div>
+   <div class="aqi-label">EUROPEAN AQI</div>
   </div>
+ </div>
+ <div class="status" id="status">Cargando...</div>
+ <div class="description" id="description">
+  Consultando calidad del aire
+ </div>
+</section>
 
-  <div class="main">
-    <div class="gauge" id="sa-gauge">
-      <div class="gauge-content">
-        <div class="aqi" id="sa-aqi">--</div>
-        <div class="aqi-label">AQI EUROPEO</div>
-      </div>
-    </div>
-    <div class="status" id="sa-status">
-      Cargando datos...
-    </div>
-    <div class="description" id="sa-description">
-      Consultando calidad del aire en Sevilla
-    </div>
-  </div>
+<section class="grid">
+ <article class="card">
+  <h3>PM2.5</h3><p>Partículas finas</p>
+  <div class="value"><span id="pm25">--</span>
+   <span class="unit">µg/m³</span></div>
+ </article>
+ <article class="card">
+  <h3>PM10</h3><p>Partículas gruesas</p>
+  <div class="value"><span id="pm10">--</span>
+   <span class="unit">µg/m³</span></div>
+ </article>
+ <article class="card">
+  <h3>NO₂</h3><p>Dióxido de nitrógeno</p>
+  <div class="value"><span id="no2">--</span>
+   <span class="unit">µg/m³</span></div>
+ </article>
+ <article class="card">
+  <h3>O₃</h3><p>Ozono</p>
+  <div class="value"><span id="o3">--</span>
+   <span class="unit">µg/m³</span></div>
+ </article>
+</section>
 
-  <div class="grid">
-    <div class="pollutant">
-      <div class="pollutant-name">PM2.5</div>
-      <div class="pollutant-description">Partículas finas</div>
-      <div class="pollutant-value">
-        <span id="sa-pm25">--</span>
-        <span class="unit">µg/m³</span>
-      </div>
-    </div>
+<footer>
+ <span id="updated">Esperando datos...</span>
+ <span>Datos: Open-Meteo / CAMS</span>
+</footer>
+<div class="error" id="error" role="status"></div>
+</main>
 
-    <div class="pollutant">
-      <div class="pollutant-name">PM10</div>
-      <div class="pollutant-description">Partículas gruesas</div>
-      <div class="pollutant-value">
-        <span id="sa-pm10">--</span>
-        <span class="unit">µg/m³</span>
-      </div>
-    </div>
+<script>
+const API =
+'https://air-quality-api.open-meteo.com/v1/air-quality' +
+'?latitude=37.3891&longitude=-5.9845' +
+'&current=european_aqi,pm2_5,pm10,nitrogen_dioxide,ozone' +
+'&timezone=Europe%2FMadrid';
 
-    <div class="pollutant">
-      <div class="pollutant-name">NO₂</div>
-      <div class="pollutant-description">Dióxido de nitrógeno</div>
-      <div class="pollutant-value">
-        <span id="sa-no2">--</span>
-        <span class="unit">µg/m³</span>
-      </div>
-    </div>
+const $ = id => document.getElementById(id);
 
-    <div class="pollutant">
-      <div class="pollutant-name">O₃</div>
-      <div class="pollutant-description">Ozono</div>
-      <div class="pollutant-value">
-        <span id="sa-o3">--</span>
-        <span class="unit">µg/m³</span>
-      </div>
-    </div>
-  </div>
+function getQuality(aqi){
+ if(aqi<=20)return ['Buena','#66d6ae',
+  'Excelente calidad del aire.'];
+ if(aqi<=40)return ['Razonablemente buena','#b6d86c',
+  'Calidad del aire generalmente satisfactoria.'];
+ if(aqi<=60)return ['Moderada','#e6ce65',
+  'Posibles molestias para personas sensibles.'];
+ if(aqi<=80)return ['Mala','#eea15b',
+  'Conviene limitar esfuerzos prolongados al aire libre.'];
+ if(aqi<=100)return ['Muy mala','#ed795f',
+  'Se recomienda precaución.'];
+ return ['Extremadamente mala','#c77acb',
+  'Reduce la exposición al aire exterior.'];
+}
 
-  <div class="footer">
-    <span id="sa-updated">Actualizando...</span>
-    <span>Fuente: Open-Meteo · CAMS</span>
-  </div>
-  <div class="error" id="sa-error" role="status"></div>
+function format(value){
+ return value==null?'--':Number(value).toFixed(1);
+}
 
-  <script>
-    (() => {
-      const root = document.getElementById('sevilla-air-widget');
-      if (root.dataset.initialized) return;
-      root.dataset.initialized = 'true';
+async function updateAir(){
+ $('error').textContent='';
+ try{
+  const response=await fetch(API);
+  if(!response.ok)throw Error('Error de conexión');
 
-      const $ = id => root.querySelector('#sa-' + id);
+  const data=await response.json();
+  const c=data.current;
+  if(!c||c.european_aqi==null)throw Error('Datos no disponibles');
 
-      const api =
-        'https://air-quality-api.open-meteo.com/v1/air-quality' +
-        '?latitude=37.3891&longitude=-5.9845' +
-        '&current=european_aqi,pm2_5,pm10,nitrogen_dioxide,ozone' +
-        '&timezone=Europe%2FMadrid';
+  const aqi=c.european_aqi;
+  const [name,color,description]=getQuality(aqi);
 
-      function quality(aqi) {
-        if (aqi <= 20) return {
-          name: 'Buena',
-          color: '#66d6ae',
-          description: 'Calidad del aire excelente. Condiciones favorables.'
-        };
-        if (aqi <= 40) return {
-          name: 'Razonablemente buena',
-          color: '#b6d86c',
-          description: 'La calidad del aire es generalmente satisfactoria.'
-        };
-        if (aqi <= 60) return {
-          name: 'Moderada',
-          color: '#e6ce65',
-          description: 'Puede haber efectos en personas sensibles.'
-        };
-        if (aqi <= 80) return {
-          name: 'Mala',
-          color: '#eea15b',
-          description: 'Conviene limitar esfuerzos prolongados al aire libre.'
-        };
-        if (aqi <= 100) return {
-          name: 'Muy mala',
-          color: '#ed795f',
-          description: 'Se recomienda precaución, especialmente a grupos sensibles.'
-        };
-        return {
-          name: 'Extremadamente mala',
-          color: '#c77acb',
-          description: 'Se recomienda reducir la exposición al aire exterior.'
-        };
-      }
+  $('aqi').textContent=aqi;
+  $('status').textContent=name;
+  $('description').textContent=description;
 
-      function format(value) {
-        return value == null ? '--' : Number(value).toFixed(1);
-      }
+  $('gauge').style.setProperty('--color',color);
+  $('gauge').style.setProperty(
+   '--progress',Math.min(aqi,120)/120*100+'%'
+  );
 
-      async function update() {
-        $('error').textContent = '';
+  $('pm25').textContent=format(c.pm2_5);
+  $('pm10').textContent=format(c.pm10);
+  $('no2').textContent=format(c.nitrogen_dioxide);
+  $('o3').textContent=format(c.ozone);
 
-        try {
-          const response = await fetch(api);
-          if (!response.ok) throw new Error('Error de conexión');
+  $('updated').textContent='Actualizado: '+
+   new Date(c.time).toLocaleString('es-ES',{
+    dateStyle:'short',timeStyle:'short',
+    timeZone:'Europe/Madrid'
+   });
 
-          const data = await response.json();
-          const c = data.current;
+ }catch(error){
+  $('error').textContent=
+   'No se pudieron cargar los datos. Se volverá a intentar.';
+ }
+}
 
-          if (!c || c.european_aqi == null) {
-            throw new Error('Datos no disponibles');
-          }
-
-          const aqi = c.european_aqi;
-          const q = quality(aqi);
-
-          $('aqi').textContent = aqi;
-          $('status').textContent = q.name;
-          $('description').textContent = q.description;
-
-          $('gauge').style.setProperty('--color', q.color);
-          $('gauge').style.setProperty(
-            '--progress',
-            Math.min(aqi, 120) / 120 * 100 + '%'
-          );
-
-          $('pm25').textContent = format(c.pm2_5);
-          $('pm10').textContent = format(c.pm10);
-          $('no2').textContent = format(c.nitrogen_dioxide);
-          $('o3').textContent = format(c.ozone);
-
-          const date = new Date(c.time);
-          $('updated').textContent =
-            'Última actualización: ' +
-            date.toLocaleString('es-ES', {
-              day: '2-digit',
-              month: 'short',
-              hour: '2-digit',
-              minute: '2-digit',
-              timeZone: 'Europe/Madrid'
-            });
-
-        } catch (error) {
-          $('error').textContent =
-            'No se han podido cargar los datos. Reintentando próximamente.';
-        }
-      }
-
-      update();
-      setInterval(update, 15 * 60 * 1000);
-    })();
-  </script>
-</div>
+updateAir();
+setInterval(updateAir,15*60*1000);
+</script>
+</body>
+</html>
