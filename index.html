@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cádiz - La luz del Atlántico</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff8f0;
+            color: #59464b;
+        }
+
+        header {
+            background: #e8b8c4;
+            color: #68464f;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            font-size: 45px;
+            letter-spacing: 5px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        nav {
+            background: #c9879b;
+            padding: 16px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ffe8df;
+        }
+
+        .portada {
+            height: 480px;
+            background:
+                linear-gradient(
+                    rgba(75, 40, 50, 0.25),
+                    rgba(75, 40, 50, 0.35)
+                ),
+                url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=1600")
+                center/cover;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .portada h2 {
+            font-size: 55px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px #59464b;
+        }
+
+        .portada p {
+            font-size: 22px;
+            text-shadow: 1px 1px 5px #59464b;
+        }
+
+        section {
+            padding: 65px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            color: #bd7189;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .descripcion {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .decoracion {
+            color: #d89bad;
+            font-size: 25px;
+            margin: 15px;
+        }
+
+        .tarjetas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .tarjeta {
+            background: #fffdf9;
+            width: 270px;
+            padding: 30px 22px;
+            border-radius: 20px;
+            border: 1px solid #f0d8dc;
+            box-shadow: 0 6px 18px rgba(180, 120, 140, 0.13);
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-9px);
+            box-shadow: 0 10px 25px rgba(180, 120, 140, 0.25);
+        }
+
+        .tarjeta h3 {
+            color: #bd7189;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta p {
+            line-height: 1.7;
+        }
+
+        .galeria {
+            background: #f8e9e6;
+        }
+
+        .galeria img {
+            width: 90%;
+            max-width: 850px;
+            border-radius: 20px;
+            box-shadow: 0 8px 22px rgba(100, 60, 70, 0.18);
+        }
+
+        .video {
+            background: #fff8f0;
+        }
+
+        iframe {
+            width: 90%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(100, 60, 70, 0.15);
+        }
+
+        footer {
+            background: #c9879b;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+            line-height: 2;
+        }
+
+        footer h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            .portada {
+                height: 360px;
+            }
+
+            .portada h2 {
+                font-size: 38px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            iframe {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>♡ CÁDIZ ♡</h1>
+        <p>Un rincón de luz, mar y encanto</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Sobre Cádiz</a>
+        <a href="#lugares">Lugares</a>
+        <a href="#galeria">Galería</a>
+        <a href="#video">Vídeo</a>
+    </nav>
+
+    <div class="portada" id="inicio">
+        <h2>Descubre Cádiz</h2>
+        <p>Donde el Atlántico se encuentra con la belleza</p>
+    </div>
+
+    <section id="historia">
+
+        <div class="decoracion">✿ ✿ ✿</div>
+
+        <h2>Bienvenidos a Cádiz</h2>
+
+        <p class="descripcion">
+            Cádiz es una preciosa ciudad andaluza situada junto al
+            océano Atlántico. Es conocida por sus playas de arena
+            dorada, sus calles llenas de historia y su ambiente
+            alegre y acogedor.
+
+            Es una de las ciudades más antiguas de Europa y cuenta
+            con monumentos impresionantes, plazas llenas de vida
+            y una gastronomía deliciosa.
+
+            Su famoso Carnaval, sus atardeceres junto al mar y
+            su gente hacen de Cádiz un lugar verdaderamente especial.
+        </p>
+
+        <div class="decoracion">♡</div>
+
+    </section>
+
+    <section id="lugares">
+
+        <h2>Los rincones más bonitos de Cádiz</h2>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <h3>🏖️ Playa de la Caleta</h3>
+                <p>
+                    Una de las playas más emblemáticas de Cádiz,
+                    rodeada de historia y preciosos atardeceres.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>⛪ Catedral de Cádiz</h3>
+                <p>
+                    Un monumento espectacular que destaca por
+                    su arquitectura y su famosa cúpula dorada.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🌳 Parque Genovés</h3>
+                <p>
+                    Un precioso jardín lleno de vegetación,
+                    rincones tranquilos y encanto natural.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🎭 El Carnaval</h3>
+                <p>
+                    Una fiesta llena de música, humor, disfraces
+                    y agrupaciones que llenan las calles de alegría.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🌊 La Playa Victoria</h3>
+                <p>
+                    Una extensa playa de arena fina ideal para
+                    disfrutar del sol y del océano Atlántico.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🌅 Castillo de San Sebastián</h3>
+                <p>
+                    Una fortificación histórica junto al mar
+                    con unas vistas maravillosas.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="galeria" id="galeria">
+
+        <h2>La magia del mar de Cádiz</h2>
+
+        <p style="margin-bottom:25px;">
+            El Atlántico, la arena y los colores del sur.
+        </p>
+
+        <img
+            src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=1400"
+            alt="Mar y playa de Cádiz"
+        >
+
+    </section>
+
+    <section class="video" id="video">
+
+        <h2>🎬 Descubre Cádiz en vídeo</h2>
+
+        <p style="margin-bottom:25px;">
+            Déjate llevar por la belleza de esta ciudad andaluza.
+        </p>
+
+        <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Vídeo turístico de Cádiz"
+            allowfullscreen>
+        </iframe>
+
+    </section>
+
+    <footer>
+
+        <h3>♡ Cádiz, donde siempre brilla el sol ♡</h3>
+
+        <p>Un lugar para soñar, disfrutar y volver.</p>
+
+        <p>© 2026 - Página web dedicada a Cádiz</p>
+
+    </footer>
+
+</body>
+</html>
